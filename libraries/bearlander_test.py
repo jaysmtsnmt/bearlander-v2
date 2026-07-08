@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 # this callback URL should match one saved in GCP app console "Authorized redirection URIs" section 
 CALLBACK_URL = "http://127.0.0.1:5000/callback" # you can use `url_for('callback')` instead
-API_CLIENT_ID = "103769395314-aqdccvhk9ubs5v66qn38air3dnec0h0v.apps.googleusercontent.com"
-API_CLIENT_SECRET = "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"
+API_CLIENT_ID = ""
+API_CLIENT_SECRET = ""
 SCOPES = ["https://www.googleapis.com/auth/calendar"] #scopes to pass to calendar
 
 class CalendarClient:

@@ -1,0 +1,97 @@
+2026-07-05 00:05:20,014 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:08:08,097 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:09:13,371 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:09:15,388 | INFO     | Agent | Agent started. | N: None | ID: 83017FD0
+2026-07-05 00:09:24,232 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:09:25,354 | INFO     | Agent | Agent started. | N: None | ID: 83017FD0
+2026-07-05 00:16:28,926 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:16:56,818 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:16:56,845 | ERROR    | ExceptionHandler | Registration failed. No info provided.
+2026-07-05 00:16:59,729 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:16:59,753 | ERROR    | ExceptionHandler | Registration failed. No info provided.
+2026-07-05 00:17:28,932 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:17:30,462 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:17:35,738 | ERROR    | Agent | Incorrect Login Details | U:jaydsoh@gmail.com
+2026-07-05 00:22:11,559 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:22:13,291 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:22:18,595 | ERROR    | Agent | Incorrect Login Details | U:jaydsoh@gmail.com
+2026-07-05 00:34:21,556 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:34:23,469 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:37:35,913 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:37:44,130 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:37:45,449 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:39:29,121 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:39:30,356 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:42:08,476 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:42:09,767 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:42:22,848 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:42:24,113 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:44:05,775 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:44:06,987 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:45:24,149 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:45:25,337 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:45:42,453 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 00:45:43,424 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:45:44,070 | INFO     | User | Constructor | ID: 83017FD0 | jaydsoh@gmail.com
+2026-07-05 00:45:45,129 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 00:45:45,976 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 00:45:59,973 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:28:41,342 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:29:39,720 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:29:42,039 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:29:42,705 | INFO     | User | Constructor | ID: 83017FD0 | jaydsoh@gmail.com
+2026-07-05 16:31:35,178 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:31:38,229 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:31:52,007 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:31:53,356 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:31:54,035 | INFO     | User | Constructor | ID: 83017FD0 | jaydsoh@gmail.com
+2026-07-05 16:31:55,080 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:31:56,021 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:32:17,047 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:32:18,421 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:32:19,265 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:32:30,976 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:32:32,044 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:32:32,901 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:32:32,904 | INFO     | Agent | Pull | slot: 20 | ['2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-03']
+2026-07-05 16:33:29,454 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:46:14,260 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:46:18,653 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:46:20,305 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:46:21,201 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:46:21,203 | INFO     | Agent | Pull | slot: 20 | ['2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-03']
+2026-07-05 16:46:30,971 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:46:33,794 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:46:35,211 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:46:36,123 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:46:36,125 | INFO     | Agent | Pull | slot: 20 | ['2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-03']
+2026-07-05 16:46:53,138 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:47:04,174 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:47:05,343 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:47:05,987 | INFO     | User | Constructor | ID: 83017FD0 | jaydsoh@gmail.com
+2026-07-05 16:47:07,366 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:47:08,261 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:47:08,263 | INFO     | Agent | Pull | slot: 20 | ['2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-03']
+2026-07-05 16:47:12,200 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:47:13,240 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:47:14,072 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:47:14,073 | INFO     | Agent | Pull | slot: 20 | ['2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-03']
+2026-07-05 16:47:33,487 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:47:34,534 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:47:35,404 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:47:35,405 | INFO     | Agent | Pull | slot: 20 | ['2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-03']
+2026-07-05 16:50:39,289 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:51:26,318 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:51:27,522 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:51:28,479 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:51:28,480 | INFO     | Agent | Pull | slot: 20 | ['2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-03']
+2026-07-05 16:53:33,400 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:53:56,001 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-05 16:53:57,245 | INFO     | Agent | Agent started. | N: Jayden Soh Guan Shun | ID: 83017FD0
+2026-07-05 16:53:58,277 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-06-29T00:00:00Z
+2026-07-05 16:53:58,281 | INFO     | Agent | Pull | slot: 20 | ['2026-06-29', '2026-06-30', '2026-07-01', '2026-07-02', '2026-07-03']
+2026-07-08 09:25:59,431 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-08 09:26:42,053 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-08 09:26:58,920 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-08 09:27:08,898 | INFO     | ExceptionHandler | ExceptionHandler Started.
+2026-07-08 09:39:31,088 | INFO     | ExceptionHandler | ExceptionHandler Started.

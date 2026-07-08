@@ -2,11 +2,14 @@ import logging
 import os 
 import hashlib
 import pickle
-import exceptionHandler as E
+from libraries import exceptionHandler as E
+from libraries import paths
+
+CACHE_PATH = paths.get_CachePath()
 
 logging.basicConfig(
     handlers = [
-        logging.FileHandler("Bearlander/cache/log.txt"),
+        logging.FileHandler(f"{CACHE_PATH}/log.txt"),
         logging.StreamHandler()
     ],
     level = logging.INFO, #determine which level of logs to display - at info, debug isn't displayed, but everything else is.
@@ -21,8 +24,23 @@ class User():
         self.email, self.password = email, password
         self.full_name = name
 
+    def initialise(self):
+        """__summary__
+        Should be called as User(param).initialise()
+
+        New Users:
+        Initialise, create cache files. 
+
+        Existing Users:
+        Load from corresponding userdata.pickle
+
+        returns:
+        user : User 
+        
+        """
+        email, password, name, = self.email, self.password, self.full_name
         exists = False
-        with open("Bearlander/cache/users.csv", "r") as file:
+        with open(f"{CACHE_PATH}/users.csv", "r") as file:
             for line in file.readlines():
                 cemail, id = line.strip("\n").split(",")
 
@@ -31,6 +49,9 @@ class User():
                     exists = True
 
         if not exists:
+            if password == None:
+                raise E.UserError("Registration failed. No info provided.")
+
             def generate_user_id(email):
                 email = email.strip().lower()
                 digest = hashlib.sha256(email.encode()).digest()
@@ -43,22 +64,32 @@ class User():
             self.id = generate_user_id(email)
 
             #complete checking if valid information
-            from agent import Agent
-            Agent(self).login() #attempts login, if fails, exception should be caught in main file!
+            try:
+                from agents import Agent
+                Agent(self).login() #attempts login, if fails, exception should be caught in main file!
+
+            except E.IncorrectDetails as e:
+                raise E.IncorrectDetails(e)
             
-            path = f"Bearlander/cache/data/{self.id}"
+            except E.AgentError as e:
+                raise E.AgentError(e)
+            
+            path = f"{CACHE_PATH}/data/{self.id}"
             if not os.path.exists(path):
                 os.makedirs(path)
 
-            with open(f"Bearlander/{path}/userdata.pickle", "wb") as file: pickle.dump(self, file) #dump userdata to a pickle file.
-            with open(f"Bearlander/cache/users.csv", "a") as file: file.write(f"{email},{self.id}\n") #dump email & id to csv file
+            with open(f"{CACHE_PATH}/data/{self.id}/userdata.pickle", "wb") as file: pickle.dump(self, file) #dump userdata to a pickle file.
+            with open(f"{CACHE_PATH}/users.csv", "a") as file: file.write(f"{email},{self.id}\n") #dump email & id to csv file
         
             logger.info(f"Constructor | ID: {self.id} | {self.email}")
 
+            return self
+
         else: #if user already exists
-            with open(f"Bearlander/{path}/userdata.pickle", "rb") as file: data = pickle.load(file)
+            with open(f"{CACHE_PATH}/data/{self.id}/userdata.pickle", "rb") as file: data = pickle.load(file)
 
             return data #return User object without creating new user object through loading userdata.pickle
+
 
     def setLoginDetails(self, email, password):
         self.email, self.password = email, password

@@ -30,7 +30,15 @@ class UnexpectedError(AgentError):
 class TimetableEmptyError(AgentError):
     """Raised when timetable is empty during request."""
 
-class UserError(Exception):
+class UserHandlerError(Exception):
     """Raised when there is a user error."""
+
+class IncorrectPassword(UserHandlerError):
+    """Raised when there is an incorrect login provided. 
+    Mismatch between existing userdata & password provided."""
+
+class Notification(Exception):
+    """Raise to pass error code back into flask application."""
+
 
 

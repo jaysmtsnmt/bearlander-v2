@@ -1,6 +1,7 @@
-from libraries import exceptionHandler, agents, dataHandler, paths
+from libraries import paths
 from flask import Flask, request, redirect, render_template, url_for
-from google_auth_oauthlib.flow import Flow
+from google_auth_oauthlib.flow import Flow, InstalledAppFlow
+from libraries.user import Handler
 
 app = Flask("Bearlander")
 
@@ -14,7 +15,7 @@ class OAuthClient:
 
         self._callback_url = "http://127.0.0.1:5000/callback" 
         self._client_id = load_credentials()[0]["clientID"]
-        self._client_secret = load_credentials()[1]["clientSecret"]
+        self._client_secret = load_credentials()[0]["clientSecret"]
         self._scopes = ["https://www.googleapis.com/auth/calendar"]
 
         self._client_config = {
@@ -34,7 +35,7 @@ class OAuthClient:
     
     def get_auth_url(self):
         flow = self.get_flow()
-        auth_url, _ = flow.authorization_url(access_type="offline", include_granted_scopes="true")
+        auth_url, _ = flow.authorization_url(access_type="offline", include_granted_scopes="true", prompt="consent")
         
         return auth_url #uses flow inbuilt function to return url
     
@@ -44,8 +45,37 @@ class OAuthClient:
 
         return flow.credentials
 
+@app.route("/auth")
+def auth():
+    client = OAuthClient()
+    auth_url = client.get_auth_url()
+    return redirect(auth_url) #redirects to authentication page by google
+
+@app.route("/callback", methods=["POST", "GET"]) #after authentication by google, returns to callback function 
+def callback(): 
+    client = OAuthClient()
+    credentials = client.get_credentials(code=request.args.get("code")) #returns a credentials object
+
+    final = { #example
+        "token": credentials.token,
+        "refresh_token": credentials.refresh_token,
+        "token_uri": credentials.token_uri,
+        "client_id": credentials.client_id,
+        "client_secret": credentials.client_secret,
+        "scopes": credentials.scopes,
+    }
+
+    #update user credentials
+    user = Handler("jaydsoh@gmail.com", "pYTHON101").login()
+    user.update_credentials(credentials)
+
+    return final
+
     
 @app.route("/", methods=["GET", "POST"])
 def home():
     return render_template("home.html")
+
+if __name__ == "__main__":
+    app.run()
 

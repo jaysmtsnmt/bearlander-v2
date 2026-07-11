@@ -10,10 +10,10 @@ import pickle
 from datetime import datetime
 from datetime import timedelta
 
-from libraries.paths import *
-from libraries.user import * 
+from libraries import exceptionHandler as E
+from libraries import paths
 
-CACHE_PATH = get_CachePath()
+CACHE_PATH = paths.get_CachePath()
 
 logging.basicConfig(
     handlers = [
@@ -26,92 +26,69 @@ logging.basicConfig(
 
 logger = logging.getLogger("Agent")
 
-class AgentError(Exception):
-    pass
-
-class LoginError(AgentError):
-    pass
-
-class LogicError(Exception): #to catch your own mistakes
-    pass
-
-class BearlanderError(Exception):
-    pass
-
-class Agent:
+class Agent():
     load_timeout = 5
 
     def __init__(self, User):
+        self.username, self.password = User.email, User.password
         self.user = User
-
+        # options.add_argument("headless")
+        # options.add_argument("log-level=3")
         options = webdriver.ChromeOptions()
-        self.driver = webdriver.Chrome(options=options)
-        self.driver.get("https://portal.vjc.edu.sg")
+        self.driver = webdriver.Chrome(options=options) #options = options
+        self.driver.get("https://portal.vjc.edu.sg/")
+        #options.add_argument()
+        
+        logger.info(f"Agent started. | N: {User.full_name} | ID: {User.id}")
+        
 
-        logger.info(f"Initialised Agent | ID: {self.user.id} E:{self.user.email}")
-
-    def login(self) -> bool: 
-        """_summary_
-        Logs in into VJC portal.
-
-        returns: 
-        True - Logged in
-        False - Not logged in.
-        """
-
+    def login(self):
         driver = self.driver
-        user = self.user
-
-        driver.find_element(By.ID, "login").send_keys(user.email)
-        driver.find_element(By.ID, "password").send_keys(user.password)
+        driver.find_element(By.ID, "login").send_keys(self.username)
+        driver.find_element(By.ID, "password").send_keys(self.password)
         driver.find_element(By.ID, "btn_submit").click()
 
         try: 
             WebDriverWait(driver, Agent.load_timeout).until(
                 EC.visibility_of_element_located((By.XPATH, '//*[@id="left-panel"]/nav/ul/li[3]/a')) #wait until left panel MyVJC is loaded
             )
-
-        except SelExceptions.TimeoutException:
-            try: 
-                driver.find_element(By.XPATH, '//*[@id="loginform"]/fieldset[1]/div')
-                return False #since incorrect box was found
         
+        except SelExceptions.TimeoutException:
+            try: #check for incorrect login detals
+                driver.find_element(By.XPATH, '//*[@id="loginform"]/fieldset[1]/div')
+
+                raise E.IncorrectDetails(f"{self.username}")
+
             except SelExceptions.NoSuchElementException:
-                t = f"Page not loaded. Neither incorrect box nor panel was found. | ID: {user.id}"
-                logger.critical(t)
-                raise LoginError(t)
+                raise E.UnexpectedError("No Such Element.")
             
         return True
     
     def isLoggedIn(self):
         driver = self.driver
-        
+
         try: driver.find_element(By.XPATH, '//*[@id="left-panel"]/nav/ul/li[3]/a')
         except SelExceptions.NoSuchElementException: return False
         return True
-    
-    def pull_student_data(self):
-        pass
 
-    def scrapeTimetable(self, dateObject:datetime) -> tuple: 
+    def scrapeTimetable(self):
         """_summary_
         Pulls timetable from VJC portal, using initalised user. 
 
         returns: 
         timetable_path : str 
         """
-
         if not self.isLoggedIn():
-            raise LogicError("Called scrapeTimetable before login.")
-        
+            self.login()
+    
         driver = self.driver
 
         # set cookies from selenium on requests
         session = requests.Session()
         for cookie in self.driver.get_cookies(): session.cookies.set(cookie['name'], cookie['value'])
         headers = {"User-Agent": self.driver.execute_script("return navigator.userAgent;")}
-
-        startdate = dateObject.strftime(r"%Y-%m-%d")
+        
+        startdate = "2026-06-29" #must find the monday
         id = "b90412dca0f08d6b012eca44c4a09304"
         url = f"https://portal.vjc.edu.sg/.report?id={id}&startdate={startdate}T00:00:00Z"
 
@@ -160,9 +137,10 @@ class Agent:
             logger.info(f"Pull | slot: {ref_slotlength} | {ref_dates}")
 
             timetable = format_timetable(raw)
+
             i = 0
             for day, lessons in timetable.items():
-                if lessons != []: #to ensure that the lessons are mapped to the right day
+                if day == i+1: #to ensure that the lessons are mapped to the right day
                     ref_date = datetime.strptime(f"{ref_dates[i]}T{ref_startslot}", r"%Y-%m-%dT%H%M")
 
                     for lesson in lessons:
@@ -179,7 +157,7 @@ class Agent:
 
                         logger.debug(f"Timetable | Processed {lesson}")
                         
-                    i += 1
+                i += 1
 
         else: timetable = {1: []}
 
@@ -187,130 +165,18 @@ class Agent:
         save_path = f"{CACHE_PATH}/data/{self.user.id}/{date.strftime(r"%m-%d-%Y")}.pickle"
         with open(save_path, "wb") as file: pass #pickle.dump(, file) 
 
-        return (timetable, save_path)
-
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
-
-class Bearlander:
-    def __init__(self, user: Handler.User):
-        self.user = user    
-        credentials = user.get_credentials()
-
-        if not credentials:
-            t = f"Called Bearlander before ensuring credentials were loaded."
-            logger.critical(t)
-            raise LogicError(t)
-        
-        else:
-            self.service = build('calendar', 'v3', credentials=credentials)
-
-        logger.info(f"Initalised Bearlander | ID: {user.id} E: {user.email}")
-
-    def get_calendar_id(self) -> str:
-        all_calendars = self.all_calendars = self.service.calendarList().list().execute().get('items', [])
-        all_cal_names = [calendar["summary"] for calendar in all_calendars]
-
-        if "Bearlander" not in all_cal_names: #create a new calendar
-            calendar = {
-                'summary' : "Bearlander",
-                'timeZone' : 'Singapore'
-            }
-
-            calendar = self.service.calendars().insert(body=calendar).execute() #return a calendar data
-
-        else:
-            calendar = all_calendars[all_cal_names.index("Bearlander")] #return existing calendar data
-
-        logger.info(f"Returning Calendar ID {calendar["id"]} | ID: {self.user.id} E: {self.user.email}")
-
-        return calendar["id"]
-
-    def clear(self, dateObj: datetime):
-        """
-        Clears the calendar after a specific date. 
-        """
-        cal_id = self.get_calendar_id()
-
-        events = self.service.events().list(calendarId=cal_id).execute()
-
-        batch = self.service.new_batch_http_request()
-        i=0
-        for event in events["items"]:
-            start = event["start"]
-
-            if "dateTime" in start:
-                event_date = datetime.fromisoformat(
-                    start["dateTime"].replace("Z", "+00:00")
-                ).date()
-
-                if event_date >= dateObj.date():
-                    batch.add(
-                        self.service.events().delete(
-                            calendarId=cal_id, 
-                            eventId = event["id"]
-                        )
-                    ) 
-
-                    i+=1
-
-        batch.execute()
-        logger.info(f"Cleared {i} events. | ID: {self.user.id} E: {self.user.email}")
-        return i #number of events deleted
-
-    def save(self, *timetables):
-        batch = self.service.new_batch_http_request()
-        cal_id = self.get_calendar_id()
-
-        def callback(request_id, response, exception):
-            if exception:
-                t = f"Failed to add event to calendar! | ID: {self.user.id} E: {self.user.email}"
-                logger.critical(t)
-                raise BearlanderError(t)
-            
-        n = 0
-        #compress timetable dictionaries into a single batch of events. 
-        for timetable in timetables:
-            for day, lessons in timetable.items():
-                for lesson in lessons:
-                    event = {
-                        "summary" : lesson["name"], 
-                        "start" : {
-                            "dateTime" : lesson["start"].isoformat(),
-                            "timeZone" : "Asia/Singapore",
-                        }, 
-                        "end" : {
-                            "dateTime" : lesson["end"].isoformat(),
-                            "timeZone" : "Asia/Singapore"
-                        },
-                    }
-
-                    batch.add(
-                        self.service.events().insert(
-                            calendarId=cal_id, 
-                            body=event
-                        ),
-                        callback = callback
-                    )
-                    n += 1
-        
-        batch.execute()
-
-        logger.info(f"Added {n} events | ID: {self.user.id} E: {self.user.email}")
-        return n #number of events added
-        
+        return save_path
 
 
-        
-            
+class Bearlander():
+    def __init__(self, user): #from user object, get loaded google calender credentials. 
+        pass
 
+    def clear(self): #clear all lessons from current week onwards.  
+        pass 
 
+    def update(self): #should check for week onwards and update by ITSELF
+        pass
 
-        
-
-            
-
-
-
-            
+    def add(self, data): #data object to update -> load from save path  
+        pass

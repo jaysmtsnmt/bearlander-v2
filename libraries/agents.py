@@ -300,17 +300,3 @@ class Bearlander:
         logger.info(f"Added {n} events | ID: {self.user.id} E: {self.user.email}")
         return n #number of events added
         
-
-
-        
-            
-
-
-
-        
-
-            
-
-
-
-            

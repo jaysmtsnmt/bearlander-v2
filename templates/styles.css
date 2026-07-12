@@ -1,0 +1,224 @@
+:root {
+    --primary: #BE9F86;
+    --secondary: #1E1E1E;
+    --tertiary: #BE1A1A;
+    --background: #F3F3F3;
+    --text_solid: #1E1E1E;
+
+    /* Typography */
+    --font-family: "Be Vietnam Pro", sans-serif;
+
+    --text-xs: 0.75rem;   /* 12px */
+    --text-sm: 0.875rem;  /* 14px */
+    --text-md: 1rem;      /* 16px */
+    --text-lg: 1.25rem;   /* 20px */
+    --text-xl: 1.5rem;    /* 24px */
+    --text-2xl: 2rem;     /* 32px */
+    --text-3xl: 3rem;     /* 48px */
+    --text-4xl: 4rem;     /* 64px */
+
+    /* Design Features */
+    --box-radius: 40px;
+    --small-box-radius: 10px;
+    --login-box-height: 300px;
+    --login-box-width: 250px;
+    --login-box-opacity: .40;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 5px;
+    background-color: var(--background);
+
+    position: relative;
+    z-index: 5; 
+}
+
+.logo {
+    height: 60px;
+}
+
+body {
+    background-color: var(--background);
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+.collage{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:space-around;
+    overflow:hidden;
+    z-index:0;
+    pointer-events:none;
+    opacity:.60;
+}
+
+.col{
+    display:flex;
+    flex-direction:column;
+
+    gap:30px;
+
+    animation:scroll 100s linear infinite;
+}
+
+.col img{
+    width:250px;
+    border-radius:18px;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.c1{
+    animation-duration:48s;
+}
+
+.c2{
+    animation-duration:36s;
+}
+
+.c3{
+    animation-duration:55s;
+}
+
+.c4 {
+    animation-duration:40s;
+}
+
+.c5 {
+   animation-duration: 50s;
+}
+
+@keyframes scroll{
+    from{
+        transform:translateY(-40%);
+    }
+
+    to{
+        transform:translateY(0%);
+    }
+
+}
+
+.container-main {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    height: 90vh;
+}
+
+.component-login {
+    width: var(--login-box-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    height: var(--login-box-height);
+
+    border-radius: var(--box-radius);
+    /* border: 2px solid var(--primary); */
+
+    padding:40px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,var(--login-box-opacity));
+    background-color: var(--background);
+}
+
+.component-login form {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    width: var(--login-box-width);
+}
+
+.input-textbox {
+    height:40px;
+    width: fill;
+    padding-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: var(--small-box-radius);
+    background-color: transparent;
+}
+
+.input-submit {
+    padding:10px;
+    font-size: var(--text-md);
+    font-weight: bold;
+    border: 2px solid var(--primary);
+    border-radius: var(--small-box-radius);
+    background-color: var(--primary);
+    color: white;
+}
+
+.input-checkbox {
+    border-radius: var(--box-radius);
+    background-color: transparent;
+}
+
+.input-checkbox-label {
+    display: flex;
+    gap: 5px;
+    font-size: var(--text-sm);
+    align-items: center;
+}
+
+.component-box {
+    width: var(--login-box-width);
+    height: var(--login-box-height);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: var(--box-radius);
+
+    padding: 40px;
+    color:rgb(68, 68, 68);
+    background-color: var(--background);
+    box-shadow: 0 20px 60px rgba(0,0,0,var(--login-box-opacity));
+    border: 2px solid var(--primary);
+}
+
+.component-box h2 {
+    width: fill;
+    text-align: center;
+    color: var(--secondary)
+}
+
+.component-box p {
+    line-height: 130%;
+    text-align: justify;
+    width: fill;
+    margin-top: 3px;
+}
+
+.component-box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: var(--login-box-width);
+    text-align: left;
+    justify-content: left;
+}
+
+.signature {
+    padding-top: 10px;
+    align-self: flex-end;
+    color: rgb(198, 198, 198);
+    font-weight: 400;
+    text-align: right;
+
+}

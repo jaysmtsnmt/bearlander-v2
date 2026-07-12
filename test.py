@@ -2,7 +2,7 @@ from libraries.user import *
 from libraries.agents import *
 from libraries import dates
 
-email, password = ("jaydsoh@gmail.com", "*")
+email, password = ("jaydsoh@gmail.com", "pYTHON101")
 
 try:
     handler = Handler(email, password)
@@ -25,5 +25,8 @@ except LoginErrorNotification as e:
     print(e)
 
 except LoginError as e:
+    print(e)
+
+except BearlanderError as e:
     print(e)
 

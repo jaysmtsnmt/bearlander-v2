@@ -76,6 +76,22 @@ def callback():
 def home():
     return render_template("home.html")
 
+@app.route("/features", methods=["GET", "POST"])
+def features():
+    return None
+
+@app.route("/subject-rep-payment", methods=["GET", "POST"])
+def payment():
+    return None
+
+@app.route("/notes", methods=["GET", "POST"])
+def notes():
+    return None
+
+@app.route("/help-documentation", methods=["GET", "POST"])
+def help_documentation():
+    return None
+
 if __name__ == "__main__":
     app.run()
 

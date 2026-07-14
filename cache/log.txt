@@ -242,3 +242,118 @@
 2026-07-12 23:20:02,797 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
 2026-07-12 23:20:03,274 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
 2026-07-12 23:20:10,165 | INFO     | Agent | Added 84 events | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-12 23:41:36,803 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-12 23:41:37,756 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-06T00:00:00Z
+2026-07-12 23:41:37,758 | INFO     | Agent | Pull | slot: 20 | ['2026-07-08', '2026-07-09', '2026-07-10']
+2026-07-12 23:41:37,947 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-12 23:41:37,948 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-12 23:41:38,161 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-12 23:41:38,162 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-12 23:41:38,166 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-12 23:41:38,170 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-12 23:41:38,612 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-12 23:41:41,820 | INFO     | Agent | Cleared 64 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-12 23:42:06,542 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-12 23:42:07,467 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-06T00:00:00Z
+2026-07-12 23:42:07,468 | INFO     | Agent | Pull | slot: 20 | ['2026-07-08', '2026-07-09', '2026-07-10']
+2026-07-12 23:42:07,671 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-12 23:42:07,672 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-12 23:42:07,859 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-12 23:42:07,861 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-12 23:42:07,865 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-12 23:42:07,867 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-12 23:42:08,349 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-12 23:42:10,872 | INFO     | Agent | Cleared 20 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-12 23:42:11,285 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-12 23:42:18,648 | INFO     | Agent | Added 84 events | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:38:11,387 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 13:38:12,492 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-14 13:38:12,494 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-14 13:38:12,679 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-14 13:38:12,680 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-14 13:38:12,878 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-27T00:00:00Z
+2026-07-14 13:38:12,881 | INFO     | Agent | Pull | slot: 20 | ['2026-07-27', '2026-07-28', '2026-07-29', '2026-07-30', '2026-07-31']
+2026-07-14 13:38:13,001 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 13:38:13,003 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:38:13,610 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:38:13,925 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:38:14,518 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:38:23,473 | INFO     | Agent | Added 91 events | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:39:00,045 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 13:39:00,985 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-14 13:39:00,986 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-14 13:39:01,196 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-14 13:39:01,198 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-14 13:39:01,411 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-27T00:00:00Z
+2026-07-14 13:39:01,412 | INFO     | Agent | Pull | slot: 20 | ['2026-07-27', '2026-07-28', '2026-07-29', '2026-07-30', '2026-07-31']
+2026-07-14 13:39:01,416 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 13:39:01,418 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:39:01,914 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:39:02,243 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:39:26,287 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 13:39:27,409 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-14 13:39:27,411 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-14 13:39:27,606 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-14 13:39:27,607 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-14 13:39:27,790 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-27T00:00:00Z
+2026-07-14 13:39:27,793 | INFO     | Agent | Pull | slot: 20 | ['2026-07-27', '2026-07-28', '2026-07-29', '2026-07-30', '2026-07-31']
+2026-07-14 13:39:27,796 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 13:39:27,798 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:39:28,294 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 13:39:28,808 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:48:18,367 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 14:48:19,486 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-14 14:48:19,488 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-14 14:48:19,764 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-14 14:48:19,765 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-14 14:48:20,043 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-27T00:00:00Z
+2026-07-14 14:48:20,046 | INFO     | Agent | Pull | slot: 20 | ['2026-07-27', '2026-07-28', '2026-07-29', '2026-07-30', '2026-07-31']
+2026-07-14 14:48:20,243 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 14:48:20,245 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:48:20,869 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:48:21,194 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:50:43,302 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 14:50:44,389 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-14 14:50:44,390 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-14 14:50:44,704 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-14 14:50:44,706 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-14 14:50:44,970 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-27T00:00:00Z
+2026-07-14 14:50:44,971 | INFO     | Agent | Pull | slot: 20 | ['2026-07-27', '2026-07-28', '2026-07-29', '2026-07-30', '2026-07-31']
+2026-07-14 14:50:44,974 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 14:50:44,976 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:50:45,732 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:50:46,106 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:51:26,795 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 14:51:28,026 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-14 14:51:28,027 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-14 14:51:28,318 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-14 14:51:28,320 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-14 14:51:28,598 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-27T00:00:00Z
+2026-07-14 14:51:28,600 | INFO     | Agent | Pull | slot: 20 | ['2026-07-27', '2026-07-28', '2026-07-29', '2026-07-30', '2026-07-31']
+2026-07-14 14:51:28,604 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 14:51:28,607 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:51:29,133 | INFO     | Agent | Returning Calendar ID fbd14f6a2d0821d8bc44c44be16fc85665913241a09c3c87037b7f932aa54574@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:51:29,481 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:52:49,475 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 14:52:50,505 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 14:52:50,506 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:52:53,581 | INFO     | Agent | Returning Calendar ID f948d5088035d2d3182e8d91f9cf03029c0d315a442a68e135fcbd75044cdd79@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:52:53,934 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:53:02,706 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 14:53:03,461 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 14:53:03,463 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:53:03,990 | INFO     | Agent | Returning Calendar ID f948d5088035d2d3182e8d91f9cf03029c0d315a442a68e135fcbd75044cdd79@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:53:04,516 | INFO     | Agent | Cleared 0 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:53:04,834 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-14 14:53:04,836 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-14 14:53:05,114 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-14 14:53:05,116 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-14 14:53:05,395 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-27T00:00:00Z
+2026-07-14 14:53:05,398 | INFO     | Agent | Pull | slot: 20 | ['2026-07-27', '2026-07-28', '2026-07-29', '2026-07-30', '2026-07-31']
+2026-07-14 14:53:06,116 | INFO     | Agent | Returning Calendar ID f948d5088035d2d3182e8d91f9cf03029c0d315a442a68e135fcbd75044cdd79@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:53:13,597 | INFO     | Agent | Added 91 events | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:53:24,448 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-14 14:53:25,245 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-14 14:53:25,247 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:53:25,861 | INFO     | Agent | Returning Calendar ID f948d5088035d2d3182e8d91f9cf03029c0d315a442a68e135fcbd75044cdd79@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-14 14:53:34,508 | INFO     | Agent | Cleared 91 events. | ID: 83017FD0 E: jaydsoh@gmail.com

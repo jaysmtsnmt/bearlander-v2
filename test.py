@@ -12,10 +12,10 @@ try:
     if agent.login(): #if login was successful
         list_of_dates = dates.get_period(0, 2)
 
-        timetables = [agent.scrapeTimetable(date)[0] for date in list_of_dates]
-
         bearlander = Bearlander(user)
         bearlander.clear(list_of_dates[0])
+
+        timetables = [agent.scrapeTimetable(date)[0] for date in list_of_dates]
         bearlander.save(*timetables) #use *timetables to unpack timetables. 
 
     else:

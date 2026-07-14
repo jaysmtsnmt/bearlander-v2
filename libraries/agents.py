@@ -237,6 +237,8 @@ class Bearlander:
 
         batch = self.service.new_batch_http_request()
         i=0
+
+        logger.debug(events)
         for event in events["items"]:
             start = event["start"]
 

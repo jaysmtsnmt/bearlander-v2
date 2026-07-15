@@ -28,13 +28,15 @@ class LoginErrorNotification(Exception):
 class Handler: 
     class User: #for storage, should not be accessed outside of Handler function. But can be returned as an object for reference. 
         """Class type frame for storing user information."""
-        def __init__(self, email:str, password:str, id:str, full_name:str, credentials=None, cls=None):
+        def __init__(self, email:str, password:str, id:str, full_name=None, credentials=None, cls=None, subjects=None, portalID=None):
             self.email = email
             self.password = password
             self.id = id
             self.credentials = credentials
             self.full_name = full_name
             self.cls = cls #class
+            self.portalID = portalID
+            self.subjects = subjects
 
         def update_data_file(self):
             with open(f"{CACHE_PATH}/data/{self.id}/userdata.pickle", "wb") as file: pickle.dump(self, file) #dump userdata to a pickle file.
@@ -69,6 +71,22 @@ class Handler:
             self.credentials = None
             self.update_data_file()
 
+        def update_student_data(self, agent):
+            if agent.isLoggedIn():
+                student_data = agent.pull_student_data()
+
+                self.full_name = student_data["name"]
+                self.portalID = student_data["portalID"]
+                self.subjects = student_data["subjects"]
+                self.cls = student_data["class"]
+
+                self.update_data_file()
+
+            else:
+                t = f"Called Update Student Data before logging in!"
+                logger.critical(t)
+                raise HandlerError(t)
+            
 
     def __init__(self, email:str, password:str): #should always have an email or password.
         self.email, self.password = email, password
@@ -97,12 +115,16 @@ class Handler:
             
             #checking if password matches. 
             if password == userObject.password:
+                # from libraries.agents import Agent
+                # agent = Agent(userObject)
+                # agent.login()
+                # userObject.update_student_data(agent)
                 return userObject #return user credentials
             
             else:
                 t = f"Incorrect password for {email}."
                 logging.info(t)
-                raise LoginErrorNotification(t) #should be caught in main file.   
+                raise LoginErrorNotification(t) #should be caught in main file. 
 
     def create_account(self):
         """__summary__
@@ -155,8 +177,10 @@ class Handler:
             )
 
             from libraries.agents import Agent
-            if not Agent(testObject).login(): #attempts login
+            agent = Agent(testObject)
+            if not agent.login(): #attempts login
                 raise LoginErrorNotification("Your login details do not match your VJC Portal Login Details. ") #code will exit here
+            
 
             def generate_user_id(email):
                 email = email.strip().lower()
@@ -180,6 +204,7 @@ class Handler:
                 os.makedirs(path)
 
             user.update_data_file()
+            user.update_student_data(agent)
 
             logging.info(f"Successful creation of user | ID:{user.id} E:{user.email}")
             return user

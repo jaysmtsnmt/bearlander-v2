@@ -38,6 +38,7 @@ class LogicError(Exception): #to catch your own mistakes
 class BearlanderError(Exception):
     pass
 
+
 class Agent:
     load_timeout = 5
 
@@ -89,9 +90,58 @@ class Agent:
         try: driver.find_element(By.XPATH, '//*[@id="left-panel"]/nav/ul/li[3]/a')
         except SelExceptions.NoSuchElementException: return False
         return True
-    
-    def pull_student_data(self):
-        pass
+
+
+    def pull_student_data(self) -> dict:
+        if not self.isLoggedIn():
+            raise LogicError("Called pull_student_data before login.")
+        
+        #set session cookies for request
+        session = requests.Session()
+        for cookie in self.driver.get_cookies(): session.cookies.set(cookie['name'], cookie['value'])
+        headers = {"User-Agent": self.driver.execute_script("return navigator.userAgent;")}
+
+        student_data = {
+            "name" : None,
+            "portalID" : None,
+            "subjects" : [],
+            "class" : None 
+        }
+
+        ### Pull Student Name & ID 
+        url = "https://portal.vjc.edu.sg/.do?action=chart&obj=Student_GetSharedFiles"
+        response = session.get(url=url, headers=headers)
+        
+        student_data["portalID"] = response.json()["data"]["id"]
+        student_data["name"] = response.json()["data"]["name"]
+
+        ### Pull Student Class
+        url = f"https://portal.vjc.edu.sg/.do?action=get&obj=Student&id={student_data['portalID']}"
+        response = session.get(url=url, headers=headers)
+
+        student_data["class"] = response.json()["data"]["cg_name"]
+
+        ### Pull Student Classes
+        url = "https://portal.vjc.edu.sg/.do?action=chart&obj=StudentSubject_ByStudent"
+        response = session.get(url=url, headers=headers)
+
+        subjects = response.json()["data"]
+
+        for subject in subjects:
+            name = subject["subject_name"]
+            code = subject["subject_code"]
+            prefix = subject["subject_sgprefix"]
+            
+            student_data["subjects"].append({
+                "name" : name,
+                "code" : code,
+                "prefix" : prefix
+            })
+
+        logger.info(f"Sucessfully Pulled Student Data. | {student_data["name"]} | {student_data["class"]} | {len(student_data["subjects"])} Subjects")
+
+        return student_data
+
 
     def scrapeTimetable(self, dateObject:datetime) -> tuple: 
         """_summary_
@@ -120,6 +170,14 @@ class Agent:
         logger.info(f"Scrape | RESP {response.status_code} | URL {response.url}") #timetable stored as response.text
 
         with open(f"{CACHE_PATH}/response.txt", "w") as file: file.write(response.text) #dumping response
+
+        # ### New Method
+        # url = f"https://portal.vjc.edu.sg/.do?action=chart&obj=Lesson_StudentTimetable&monday={startdate}T00:00:00Z"
+        # response = session.get(url=url, headers=headers)
+        # logger.info(f"Scrape | RESP {response.status_code} | URL {response.url}")
+        
+        # raw = response.json()["data"]
+        # timeslots = raw.get("timeslots")
 
         if "var data = " in response.text:
             with open(f"{CACHE_PATH}/response.txt", "r") as file:
@@ -161,6 +219,9 @@ class Agent:
 
             timetable = format_timetable(raw)
             i = 0
+
+            subjects = self.user.subjects
+
             for day, lessons in timetable.items():
                 if lessons != []: #to ensure that the lessons are mapped to the right day
                     ref_date = datetime.strptime(f"{ref_dates[i]}T{ref_startslot}", r"%Y-%m-%dT%H%M")
@@ -233,13 +294,33 @@ class Bearlander:
         """
         cal_id = self.get_calendar_id()
 
+        compiled = []
         events = self.service.events().list(calendarId=cal_id).execute()
+        compiled = compiled + events["items"]
+        while True: #to make sure that all events are fetched.
+            # print(len(events.get("items", [])))
+            token = events.get("nextPageToken")
+            if not token:
+                break
+
+            events = self.service.events().list(
+                calendarId=cal_id,
+                pageToken=token
+            ).execute()
+
+            compiled = compiled + events["items"]
 
         batch = self.service.new_batch_http_request()
         i=0
 
+        def callback(request_id, response, exception):
+            if exception:
+                t = f"Failed to clear event from calendar! | ID: {self.user.id} E: {self.user.email}"
+                logger.critical(t)
+                raise BearlanderError(t)
+
         logger.debug(events)
-        for event in events["items"]:
+        for event in compiled:
             start = event["start"]
 
             if "dateTime" in start:
@@ -252,7 +333,8 @@ class Bearlander:
                         self.service.events().delete(
                             calendarId=cal_id, 
                             eventId = event["id"]
-                        )
+                        ),
+                        callback = callback
                     ) 
 
                     i+=1
@@ -273,29 +355,36 @@ class Bearlander:
             
         n = 0
         #compress timetable dictionaries into a single batch of events. 
+        import libraries.subject_filters as filters
         for timetable in timetables:
             for day, lessons in timetable.items():
                 for lesson in lessons:
-                    event = {
-                        "summary" : lesson["name"], 
-                        "start" : {
-                            "dateTime" : lesson["start"].isoformat(),
-                            "timeZone" : "Asia/Singapore",
-                        }, 
-                        "end" : {
-                            "dateTime" : lesson["end"].isoformat(),
-                            "timeZone" : "Asia/Singapore"
-                        },
-                    }
-
-                    batch.add(
-                        self.service.events().insert(
-                            calendarId=cal_id, 
-                            body=event
-                        ),
-                        callback = callback
+                    lesson_name = filters.get_lesson_name(
+                        lesson=lesson["name"],
+                        subjects=self.user.subjects
                     )
-                    n += 1
+
+                    if lesson_name:
+                        event = {
+                            "summary" : lesson_name , 
+                            "start" : {
+                                "dateTime" : lesson["start"].isoformat(),
+                                "timeZone" : "Asia/Singapore",
+                            }, 
+                            "end" : {
+                                "dateTime" : lesson["end"].isoformat(),
+                                "timeZone" : "Asia/Singapore"
+                            },
+                        }
+
+                        batch.add(
+                            self.service.events().insert(
+                                calendarId=cal_id, 
+                                body=event
+                            ),
+                            callback = callback
+                        )
+                        n += 1
         
         batch.execute()
 

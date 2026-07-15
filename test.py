@@ -10,7 +10,7 @@ try:
 
     agent = Agent(user)
     if agent.login(): #if login was successful
-        list_of_dates = dates.get_period(0, 2)
+        list_of_dates = dates.get_period(0, 1)
 
         bearlander = Bearlander(user)
         bearlander.clear(list_of_dates[0])

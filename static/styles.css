@@ -160,6 +160,26 @@ body {
     border-radius: var(--small-box-radius);
     background-color: var(--primary);
     color: white;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s,
+        transform 0.15s,
+        width 0.3s; 
+}
+
+.input-submit:hover {
+    background-color: #af927b;
+}
+
+.input-submit:active {
+    transform: scale(0.96);
+}
+
+.input-submit.loading {
+    background-color: #ffd3af;
+    cursor: wait;
 }
 
 .input-checkbox {
@@ -220,5 +240,24 @@ body {
     color: rgb(198, 198, 198);
     font-weight: 400;
     text-align: right;
+}
 
+.alert {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 10px;
+
+    background-color: rgba(255, 86, 86, 0.751);
+}
+
+.alert p {
+    margin: 0;
+    color: rgb(0, 0, 0);
 }

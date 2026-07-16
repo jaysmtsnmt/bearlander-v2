@@ -1,9 +1,11 @@
 from libraries import paths
 from flask import Flask, request, redirect, render_template, url_for
 from google_auth_oauthlib.flow import Flow, InstalledAppFlow
-from libraries.user import Handler
+from libraries.user import *
+from libraries.agents import *
+from libraries.dates import *
 
-app = Flask("Bearlander")
+app = Flask(__name__)
 
 class OAuthClient:
     def __init__(self):
@@ -74,7 +76,52 @@ def callback():
     
 @app.route("/", methods=["GET", "POST"])
 def home():
-    return render_template("home.html")
+    if request.method == "GET":
+        return render_template("login.html")
+    
+    else: #login form
+        form = request.form
+
+        email, password, remember = (
+            form.get("email"), 
+            form.get("password"), 
+            "remember" in form
+        )
+
+        success = False
+        if email and password: 
+            handler = Handler(email, password)
+
+            try:
+                user = handler.create_account()
+
+                agent = Agent(user)
+                if agent.login(): 
+                    success = True
+
+                else:
+                    success = False
+                    error = "Incorrect Email or Password."
+
+            except LoginErrorNotification as e:
+                success = False
+                error = e
+
+            except LoginError as e:
+                success = False
+                error = e
+
+        else: 
+            success = False
+            error = "Empty Fields!"
+
+        if success == False:
+            return render_template("login.html", error=error)
+        
+        else:
+            return render_template("bearlander.html")
+
+
 
 @app.route("/features", methods=["GET", "POST"])
 def features():

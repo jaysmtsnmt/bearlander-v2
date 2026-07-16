@@ -10,9 +10,11 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     </head>
     <body>
+        <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+        {% set assets = url_for('static', filename='assets') %}
         <div class="collage">
             <div class="col c1">
                 <img src="https://scontent-ord5-2.cdninstagram.com/v/t51.82787-15/723931241_18469743946102679_1226557176806080127_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzkxOTE0MTIxNTQ3OTc5NjgxMA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTM2NS5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4ZxAA43bzIMQ7kNvwFElJaW&_nc_oc=Adq1ym26j_xE3Bx7OVek3_1heQkNqmUT-ZPUsEuh6s8ZWg4MG1rvaj1hS6CO2d8IAZ4&_nc_zt=23&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_gid=S5bZhs89sFp4xpqh3_w9Pg&_nc_ss=72689&oh=00_AQB6eNzIk9NS5dNYcmMD7cbYsyOOAPu3Ak-0ZrtE2Sq--w&oe=6A598F9F" alt="Collage image">
@@ -114,18 +116,24 @@
         </div>
 
         <header>
-            <nav class="navbar"><img class="logo" src="assets/branding/logo_full.svg" alt="Bearlander Logo"></nav>
+            <nav class="navbar"><img class="logo" src="{{ assets }}/branding/logo_full.svg" alt="Bearlander Logo"></nav>
         </header>
+
+        {% if error %}
+            <div class="alert">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
 
         <div class="container-main">
             <div class="component-login">
-                <img class="logo" src="assets/branding/logo_graphic.svg" style="height: 40px;">
+                <img class="logo" src="{{ assets }}/branding/logo_graphic.svg" style="height: 40px;">
                 <h2>Log in to Bearlander</h2>
-                <form method="post">
+                <form method="post" id="form-login" name="form-login">
                     <input class="input-textbox" type="text" id="email" name="email" placeholder="Email"></input>
                     <input class="input-textbox" type="text" id="password" name="password" placeholder="Password"></input>
-                    <label class="input-checkbox-label"><input class="input-checkbox" type="checkbox">Remember Me</label>
-                    <button class="input-submit" type="submit" id="submit" name="submit">Log In</button>
+                    <label class="input-checkbox-label"><input class="input-checkbox" type="checkbox" id="remember" name="remember">Remember Me</label>
+                    <button class="input-submit" type="submit" id="input-submit" name="input-submit"><span class="btn-text">Log In</span></button>
                 </form>
             </div>
 

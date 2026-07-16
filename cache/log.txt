@@ -545,3 +545,672 @@
 2026-07-15 21:02:29,500 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
 2026-07-15 21:02:30,140 | INFO     | Agent | Returning Calendar ID f948d5088035d2d3182e8d91f9cf03029c0d315a442a68e135fcbd75044cdd79@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
 2026-07-15 21:02:34,672 | INFO     | Agent | Added 45 events | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-16 16:11:25,334 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-16 16:11:26,449 | INFO     | googleapiclient.discovery_cache | file_cache is only supported with oauth2client<4.0.0
+2026-07-16 16:11:26,451 | INFO     | Agent | Initalised Bearlander | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-16 16:11:27,323 | INFO     | Agent | Returning Calendar ID f948d5088035d2d3182e8d91f9cf03029c0d315a442a68e135fcbd75044cdd79@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-16 16:11:33,078 | INFO     | Agent | Cleared 45 events. | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-16 16:11:33,373 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-13T00:00:00Z
+2026-07-16 16:11:33,376 | INFO     | Agent | Pull | slot: 20 | ['2026-07-13', '2026-07-14', '2026-07-15', '2026-07-16', '2026-07-17']
+2026-07-16 16:11:33,649 | INFO     | Agent | Scrape | RESP 200 | URL https://portal.vjc.edu.sg/.report?id=b90412dca0f08d6b012eca44c4a09304&startdate=2026-07-20T00:00:00Z
+2026-07-16 16:11:33,652 | INFO     | Agent | Pull | slot: 20 | ['2026-07-20', '2026-07-21', '2026-07-22', '2026-07-23', '2026-07-24']
+2026-07-16 16:11:34,454 | INFO     | Agent | Returning Calendar ID f948d5088035d2d3182e8d91f9cf03029c0d315a442a68e135fcbd75044cdd79@group.calendar.google.com | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-16 16:11:38,607 | INFO     | Agent | Added 47 events | ID: 83017FD0 E: jaydsoh@gmail.com
+2026-07-16 16:14:15,567 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:14:15,567 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:14:17,428 | ERROR    | Bearlander | Exception on / [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 77, in home
+    return render_template("login.html")
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: login.html
+2026-07-16 16:14:17,434 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:14:17] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-16 16:14:57,886 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:14:57,886 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:14:59,237 | ERROR    | Bearlander | Exception on / [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 77, in home
+    return render_template("Bearlander/templates/login.html")
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: Bearlander/templates/login.html
+2026-07-16 16:14:59,241 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:14:59] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-16 16:16:02,363 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:16:02,364 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:16:10,018 | ERROR    | Bearlander | Exception on / [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 77, in home
+    return render_template("/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/templates/login.html")
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/templates/login.html
+2026-07-16 16:16:10,027 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:16:10] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-16 16:16:37,482 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:16:37,482 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:16:38,689 | ERROR    | Bearlander | Exception on / [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 77, in home
+    return render_template("/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/templates/login.html")
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/templates/login.html
+2026-07-16 16:16:38,693 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:16:38] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-16 16:16:48,484 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:16:48,485 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:16:49,529 | ERROR    | Bearlander | Exception on / [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 77, in home
+    return render_template("login.html")
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: login.html
+2026-07-16 16:16:49,533 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:16:49] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-16 16:17:18,603 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:17:18,603 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:17:19,585 | ERROR    | Bearlander | Exception on / [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 77, in home
+    return render_template("index.html")
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2026-07-16 16:17:19,588 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:17:19] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-16 16:19:25,466 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:19:25,466 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:19:27,370 | ERROR    | web | Exception on / [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 77, in home
+    return render_template("index.html")
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2026-07-16 16:19:27,375 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-07-16 16:19:35,461 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:19:35,461 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:19:37,034 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:37] "GET / HTTP/1.1" 200 -
+2026-07-16 16:19:37,099 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:37] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2026-07-16 16:19:37,113 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:37] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2026-07-16 16:19:37,297 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:37] "[33mGET /assets/branding/logo_full.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:19:37,299 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:37] "[33mGET /assets/branding/logo_graphic.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:19:46,227 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:46] "GET / HTTP/1.1" 200 -
+2026-07-16 16:19:46,258 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:46] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2026-07-16 16:19:46,262 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:46] "[33mGET /assets/branding/logo_full.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:19:46,263 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:19:46] "[33mGET /assets/branding/logo_graphic.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:20:06,860 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:20:06] "GET / HTTP/1.1" 200 -
+2026-07-16 16:20:06,881 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:20:06] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2026-07-16 16:20:06,883 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:20:06] "[33mGET /assets/branding/logo_full.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:20:06,883 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:20:06] "[33mGET /assets/branding/logo_graphic.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:20:35,693 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:20:35] "GET / HTTP/1.1" 200 -
+2026-07-16 16:20:35,716 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:20:35] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2026-07-16 16:20:35,727 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:20:35] "[33mGET /assets/branding/logo_full.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:20:35,728 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:20:35] "[33mGET /assets/branding/logo_graphic.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:23:54,520 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:23:54,520 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:23:56,115 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:23:56] "GET / HTTP/1.1" 200 -
+2026-07-16 16:23:56,215 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:23:56] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 16:23:56,322 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:23:56] "[33mGET /assets/branding/logo_full.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:23:56,339 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:23:56] "[33mGET /assets/branding/logo_graphic.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:23:59,394 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:23:59] "GET / HTTP/1.1" 200 -
+2026-07-16 16:23:59,422 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:23:59] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 16:23:59,427 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:23:59] "[33mGET /assets/branding/logo_full.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:23:59,431 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:23:59] "[33mGET /assets/branding/logo_graphic.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:24:25,602 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:24:25,602 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:24:27,614 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:24:27] "GET / HTTP/1.1" 200 -
+2026-07-16 16:24:27,639 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:24:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:24:27,688 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:24:27] "[33mGET /assets/branding/logo_full.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:24:27,689 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:24:27] "[33mGET /assets/branding/logo_graphic.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:27:03,338 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:27:03] "GET / HTTP/1.1" 200 -
+2026-07-16 16:27:03,376 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:27:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:27:03,380 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:27:03] "[33mGET /assets/branding/logo_full.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:27:03,390 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:27:03] "[33mGET /assets/branding/logo_graphic.svg HTTP/1.1[0m" 404 -
+2026-07-16 16:31:03,863 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:31:03,863 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:31:05,095 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:05] "GET / HTTP/1.1" 200 -
+2026-07-16 16:31:05,199 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:31:05,281 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:05] "GET /static/assets/branding/logo_full.svg HTTP/1.1" 200 -
+2026-07-16 16:31:05,281 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:05] "GET /static/assets/branding/logo_graphic.svg HTTP/1.1" 200 -
+2026-07-16 16:31:09,373 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:09] "GET / HTTP/1.1" 200 -
+2026-07-16 16:31:09,415 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:31:09,426 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:09] "GET /static/assets/branding/logo_full.svg HTTP/1.1" 200 -
+2026-07-16 16:31:09,426 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:09] "GET /static/assets/branding/logo_graphic.svg HTTP/1.1" 200 -
+2026-07-16 16:31:21,667 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:21] "POST / HTTP/1.1" 200 -
+2026-07-16 16:31:21,704 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:31:21,708 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:21] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:31:21,709 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:31:21] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:40,463 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:46:40,463 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:46:48,247 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:48] "POST / HTTP/1.1" 200 -
+2026-07-16 16:46:48,284 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:48] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:46:48,331 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:48] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:48,331 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:48] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 16:46:48,333 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:48] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:50,224 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:50] "POST / HTTP/1.1" 200 -
+2026-07-16 16:46:50,250 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:46:50,254 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:50] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:46:50,256 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:50] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:50,258 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:50] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:55,350 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:55] "POST / HTTP/1.1" 200 -
+2026-07-16 16:46:55,383 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:55] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:46:55,385 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:46:55,391 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:55] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:55,392 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:55] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:57,249 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:57] "POST / HTTP/1.1" 200 -
+2026-07-16 16:46:57,279 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:46:57,280 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:57] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:46:57,281 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:57] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:57,281 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:57] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:59,083 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:59] "POST / HTTP/1.1" 200 -
+2026-07-16 16:46:59,111 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:59] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:46:59,112 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:46:59,112 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:59] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:46:59,114 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:46:59] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:47:00,707 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:00] "POST / HTTP/1.1" 200 -
+2026-07-16 16:47:00,733 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:47:00,737 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:00] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:47:00,739 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:00] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:47:00,740 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:00] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:47:14,831 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:14] "POST / HTTP/1.1" 200 -
+2026-07-16 16:47:14,855 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:14] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:47:14,857 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:47:14,858 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:14] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:47:14,858 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:47:14] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:50:23,065 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:50:23] "POST / HTTP/1.1" 200 -
+2026-07-16 16:50:23,098 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:50:23] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:50:23,099 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:50:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:50:23,100 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:50:23] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:50:23,101 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:50:23] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:50:54,662 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:50:54,662 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:50:58,516 | ERROR    | web | Exception on / [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2026-07-16 16:50:58,520 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:50:58] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2026-07-16 16:52:32,268 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:52:32,269 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:52:34,249 | ERROR    | web | Exception on / [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2026-07-16 16:52:34,255 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:52:34] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2026-07-16 16:53:47,669 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:53:47,670 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:53:51,092 | ERROR    | web | Exception on / [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2026-07-16 16:53:51,096 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:53:51] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2026-07-16 16:54:00,683 | ERROR    | web | Exception on / [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2026-07-16 16:54:00,685 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:54:00] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2026-07-16 16:54:27,598 | ERROR    | web | Exception on / [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2026-07-16 16:54:27,600 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:54:27] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2026-07-16 16:57:29,203 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 16:57:29,203 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 16:57:31,950 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:57:31] "GET / HTTP/1.1" 200 -
+2026-07-16 16:57:31,969 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:57:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 16:57:31,970 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:57:31] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 16:57:31,989 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:57:31] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:57:31,992 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:57:31] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 16:57:37,778 | ERROR    | web | Exception on / [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2026-07-16 16:57:37,782 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 16:57:37] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2026-07-16 17:07:59,156 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:07:59,157 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:08:00,427 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:00] "GET / HTTP/1.1" 200 -
+2026-07-16 17:08:00,522 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:00] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:08:00,527 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:00] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 17:08:00,569 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:00] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:08:00,570 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:00] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:08:06,169 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:06] "GET / HTTP/1.1" 200 -
+2026-07-16 17:08:06,199 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:06] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:08:06,212 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:08:06,251 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:06] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:08:06,256 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:06] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:08:14,046 | INFO     | root | Incorrect password for jaydsoh@gmail.com.
+2026-07-16 17:08:14,047 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:14] "POST / HTTP/1.1" 200 -
+2026-07-16 17:08:14,075 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:14] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:08:14,078 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:08:14,081 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:14] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:08:14,081 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:14] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:08:29,494 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-16 17:08:30,285 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "POST / HTTP/1.1" 200 -
+2026-07-16 17:08:30,314 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/assets/resources/icon-home.svg HTTP/1.1" 200 -
+2026-07-16 17:08:30,317 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/styles_bearlander.css HTTP/1.1" 200 -
+2026-07-16 17:08:30,319 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:08:30,321 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/assets/resources/icon-calendar.svg HTTP/1.1" 200 -
+2026-07-16 17:08:30,323 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/assets/resources/icon-resources.svg HTTP/1.1" 200 -
+2026-07-16 17:08:30,324 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/assets/resources/icon-info.svg HTTP/1.1" 200 -
+2026-07-16 17:08:30,324 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/assets/resources/icon-creditcard.svg HTTP/1.1" 200 -
+2026-07-16 17:08:30,325 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/assets/resources/icon-settings.svg HTTP/1.1" 200 -
+2026-07-16 17:08:30,327 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/assets/resources/icon-google.svg HTTP/1.1" 200 -
+2026-07-16 17:08:30,328 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:08:30] "GET /static/assets/resources/icon-reload.svg HTTP/1.1" 200 -
+2026-07-16 17:09:38,491 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:09:38,492 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:09:39,689 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:09:39] "GET / HTTP/1.1" 200 -
+2026-07-16 17:09:39,788 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:09:39] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:09:39,792 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:09:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:09:39,824 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:09:39] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:09:39,825 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:09:39] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:10:00,203 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:10:00] "GET / HTTP/1.1" 200 -
+2026-07-16 17:10:00,229 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:10:00] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:10:00,232 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:10:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:10:00,339 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:10:00] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:10:00,341 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:10:00] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:16:27,787 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:16:27,787 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:16:31,102 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:31] "POST / HTTP/1.1" 200 -
+2026-07-16 17:16:31,126 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:31] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:16:31,129 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:31] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 17:16:31,172 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:31] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:16:31,172 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:31] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:16:35,228 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:35] "POST / HTTP/1.1" 200 -
+2026-07-16 17:16:35,255 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:35] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:16:35,258 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:16:35,259 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:35] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:16:35,260 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:16:35] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:17:09,677 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:17:09,677 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:17:11,940 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:11] "POST / HTTP/1.1" 200 -
+2026-07-16 17:17:11,967 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:11] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:17:11,971 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:11] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 17:17:11,976 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:11] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:17:11,977 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:11] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:17:23,846 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:17:23,846 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:17:25,052 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:25] "GET / HTTP/1.1" 200 -
+2026-07-16 17:17:25,072 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:25] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:17:25,080 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:25] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:17:25,080 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:25] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:17:25,081 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:25] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 17:17:27,540 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:27] "POST / HTTP/1.1" 200 -
+2026-07-16 17:17:27,564 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:17:27,565 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:27] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:17:27,566 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:27] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:17:27,567 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:17:27] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:18:15,159 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:18:15,160 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:18:17,334 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:17] "GET / HTTP/1.1" 200 -
+2026-07-16 17:18:17,355 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:17] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:18:17,362 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:17] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 17:18:17,363 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:17] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:18:17,363 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:17] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:18:19,652 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:19] "POST / HTTP/1.1" 200 -
+2026-07-16 17:18:19,686 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:18:19,687 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:19] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:18:19,737 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:19] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:18:19,747 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:18:19] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:10,041 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:19:10,042 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:19:11,120 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:11] "GET / HTTP/1.1" 200 -
+2026-07-16 17:19:11,151 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:11] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:19:11,153 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:11] "GET /static/styles.css HTTP/1.1" 200 -
+2026-07-16 17:19:11,178 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:11] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:11,180 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:11] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:14,171 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:14] "POST / HTTP/1.1" 200 -
+2026-07-16 17:19:14,200 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:19:14,201 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:14] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:19:14,219 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:14] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:14,223 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:14] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:30,444 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-16 17:19:31,192 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "POST / HTTP/1.1" 200 -
+2026-07-16 17:19:31,221 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/resources/icon-home.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,221 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/styles_bearlander.css HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,222 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,222 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/resources/icon-calendar.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,225 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/resources/icon-resources.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,226 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/resources/icon-creditcard.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,229 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/resources/icon-info.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,231 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/resources/icon-settings.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,232 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/resources/icon-google.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:31,233 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:31] "[36mGET /static/assets/resources/icon-reload.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:33,832 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:33] "GET / HTTP/1.1" 200 -
+2026-07-16 17:19:33,852 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:33] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:19:33,854 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:19:33,854 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:33] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:33,854 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:33] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:42,192 | INFO     | root | Incorrect password for jaydsoh@gmail.com.
+2026-07-16 17:19:42,193 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:42] "POST / HTTP/1.1" 200 -
+2026-07-16 17:19:42,224 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:42] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:19:42,226 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:19:42,229 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:42] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:19:42,229 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:19:42] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:20:50,129 | ERROR    | web | Exception on / [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 98, in home
+    agent = Agent(user)
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/libraries/agents.py", line 52, in __init__
+    logger.info(f"Initialised Agent | ID: {self.user.id} E:{self.user.email}")
+                                           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+2026-07-16 17:20:50,138 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:20:50] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2026-07-16 17:21:18,056 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:21:18,056 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:21:30,011 | ERROR    | web | Exception on / [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/web.py", line 98, in home
+    agent = Agent(user)
+  File "/Users/soh/Documents/Code/Visual Studio Code/Bearlander/Bearlander/libraries/agents.py", line 52, in __init__
+    logger.info(f"Initialised Agent | ID: {self.user.id} E:{self.user.email}")
+                                           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+2026-07-16 17:21:30,015 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:21:30] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2026-07-16 17:24:01,171 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 17:24:01,171 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 17:24:03,270 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:03] "GET / HTTP/1.1" 200 -
+2026-07-16 17:24:03,289 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:03] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:24:03,295 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:24:03,353 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:03] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:03,361 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:03] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:09,283 | INFO     | Agent | Initialised Agent | ID: None E:asd
+2026-07-16 17:24:14,607 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:14] "POST / HTTP/1.1" 200 -
+2026-07-16 17:24:14,649 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:14] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:24:14,649 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:24:14,664 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:14] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:14,669 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:14] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:25,508 | INFO     | Agent | Initialised Agent | ID: None E:asdas
+2026-07-16 17:24:30,827 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:30] "POST / HTTP/1.1" 200 -
+2026-07-16 17:24:30,866 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:30] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 17:24:30,867 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 17:24:30,869 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:30] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:30,869 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:30] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:43,974 | INFO     | root | Existing user found. | ID:83017FD0 E:jaydsoh@gmail.com
+2026-07-16 17:24:47,068 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-16 17:24:47,820 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "POST / HTTP/1.1" 200 -
+2026-07-16 17:24:47,860 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/styles_bearlander.css HTTP/1.1[0m" 304 -
+2026-07-16 17:24:47,861 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:47,865 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-resources.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:47,872 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-calendar.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:47,876 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-home.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:47,882 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-google.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:47,882 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-info.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:47,882 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-reload.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:47,883 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-creditcard.svg HTTP/1.1[0m" 304 -
+2026-07-16 17:24:48,015 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:48] "[36mGET /static/assets/resources/icon-settings.svg HTTP/1.1[0m" 304 -

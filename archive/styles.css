@@ -1,0 +1,15 @@
+:root{--primary:#BE9F86;--secondary:#1E1E1E;--background:#F3F3F3;--font:"Be Vietnam Pro",sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--font);background:radial-gradient(circle,#fff,#f3f3f3);overflow:hidden}
+.navbar{height:80px;display:flex;justify-content:center;align-items:center;border-bottom:2px solid var(--primary);position:relative;z-index:5;background:rgba(243,243,243,.8);backdrop-filter:blur(10px)}
+.logo{height:58px}.container-main{height:calc(100vh - 80px);display:flex;gap:40px;justify-content:center;align-items:center;position:relative;z-index:5}
+.component-login,.component-box{width:340px;padding:34px;border-radius:22px;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);box-shadow:0 25px 60px rgba(0,0,0,.12)}
+.input-textbox{width:100%;height:48px;margin:10px 0;padding:0 14px;border-radius:12px;border:1px solid #ccc}
+.input-textbox:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(190,159,134,.2)}
+.input-submit{width:100%;height:48px;border:none;border-radius:12px;background:var(--primary);color:#fff;font-weight:700;cursor:pointer}
+.input-checkbox-label{display:flex;gap:8px;align-items:center;margin:10px 0 18px}
+.collage{position:fixed;inset:0;display:flex;justify-content:space-around;pointer-events:none;opacity:.18}
+.col{display:flex;flex-direction:column;gap:28px}
+.col img{width:220px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.c1{animation:scroll 40s linear infinite}.c2{animation:scroll 32s linear infinite reverse}.c3{animation:scroll 48s linear infinite}
+.col img:nth-child(odd){transform:rotate(-6deg)}.col img:nth-child(even){transform:rotate(5deg)}
+@keyframes scroll{from{transform:translateY(-45%)}to{transform:translateY(0)}}

@@ -1214,3 +1214,24 @@ AttributeError: 'NoneType' object has no attribute 'id'
 2026-07-16 17:24:47,882 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-reload.svg HTTP/1.1[0m" 304 -
 2026-07-16 17:24:47,883 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:47] "[36mGET /static/assets/resources/icon-creditcard.svg HTTP/1.1[0m" 304 -
 2026-07-16 17:24:48,015 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 17:24:48] "[36mGET /static/assets/resources/icon-settings.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:33,009 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-16 21:07:33,009 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-16 21:07:35,589 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:35] "GET / HTTP/1.1" 200 -
+2026-07-16 21:07:35,610 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:35] "[33mGET /static/js/login.js HTTP/1.1[0m" 404 -
+2026-07-16 21:07:35,612 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-07-16 21:07:35,613 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:35] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:35,615 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:35] "[36mGET /static/assets/branding/logo_graphic.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:52,699 | INFO     | root | Existing user found. | ID:83017FD0 E:jaydsoh@gmail.com
+2026-07-16 21:07:59,102 | INFO     | Agent | Initialised Agent | ID: 83017FD0 E:jaydsoh@gmail.com
+2026-07-16 21:07:59,771 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "POST / HTTP/1.1" 200 -
+2026-07-16 21:07:59,798 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/resources/icon-calendar.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,798 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/branding/logo_full.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,800 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/styles_bearlander.css HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,800 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/resources/icon-home.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,802 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/resources/icon-resources.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,804 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/resources/icon-creditcard.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,804 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/resources/icon-google.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,804 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/resources/icon-settings.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,805 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/resources/icon-info.svg HTTP/1.1[0m" 304 -
+2026-07-16 21:07:59,806 | INFO     | werkzeug | 127.0.0.1 - - [16/Jul/2026 21:07:59] "[36mGET /static/assets/resources/icon-reload.svg HTTP/1.1[0m" 304 -

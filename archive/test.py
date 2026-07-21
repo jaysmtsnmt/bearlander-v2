@@ -6,7 +6,7 @@ email, password = ("jaydsoh@gmail.com", "pYTHON101")
 
 try:
     handler = Handler(email, password)
-    user = handler.login()
+    user = handler.create_account()
 
     agent = Agent(user)
     if agent.login(): #if login was successful
@@ -18,7 +18,6 @@ try:
         timetables = [agent.scrapeTimetable(date)[0] for date in list_of_dates]
         bearlander.save(*timetables) #use *timetables to unpack timetables. 
 
-    else:
         print(f"Incorrect Password")
 
 except LoginErrorNotification as e:

@@ -142,7 +142,6 @@ class Agent:
 
         return student_data
 
-
     def scrapeTimetable(self, dateObject:datetime) -> tuple: 
         """_summary_
         Pulls timetable from VJC portal, using initalised user. 

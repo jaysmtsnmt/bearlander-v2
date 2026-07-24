@@ -1,0 +1,39 @@
+/* Reusable Helper Classes */
+
+/* Container Behaviours */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.grid { 
+    display: grid;
+}
+
+
+/* Alignment */
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.fill {
+    width: 100%;
+}

@@ -106,7 +106,7 @@ class User:
             t = f"Called Update Student Data before logging in!"
             logger.critical(t)
             raise HandlerError(t)
-
+        
 
 class User_Discontinued: #for storage, should not be accessed outside of Handler function. But can be returned as an object for reference. 
     """Class type frame for storing user information.

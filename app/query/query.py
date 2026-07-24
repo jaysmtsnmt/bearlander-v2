@@ -35,6 +35,12 @@ class Tables(Enum):
         path = f"{PATH_USER_DATA}/database.db"
     )
 
+    ADMIN = Table(
+        name = "admin",
+        type = "csv",
+        path = f"{PATH_CLIENT_DATA}/admin.csv"
+    )
+
 class Query(Enum):
     SELECT = "select" #must pass filters
     DELETE = "delete" #must pass filters
@@ -50,6 +56,7 @@ class CSVHandler:
         with open(file_path, "r", newline="") as file:
             data = csv.DictReader(file) #written to data as list of dictionaries
             headers = data.fieldnames
+            data = list(data)
 
             if filters != {}:
                 results = []
@@ -67,8 +74,9 @@ class CSVHandler:
         file_path = table.path
         
         with open(file_path, "r", newline="") as file:
-            data = list(csv.DictReader(file))
+            data = csv.DictReader(file)
             headers = data.fieldnames
+            data = list(data)
 
             results = []
             for line in data:
@@ -78,6 +86,7 @@ class CSVHandler:
             with open(file_path, "w", newline="") as file:
                 writer = csv.DictWriter(file, fieldnames=headers)
 
+                writer.writeheader()
                 writer.writerows(results)
 
     @staticmethod
@@ -103,6 +112,7 @@ class CSVHandler:
             with open(file_path, "r", newline="") as file:
                 data = csv.DictReader(file)
                 headers = data.fieldnames
+                data = list(data)
 
             with open(file_path, "a", newline="") as file:
                 writer = csv.DictWriter(file, fieldnames=headers)
@@ -209,6 +219,26 @@ class SQLHandler:
             logger.critical(t)
             raise SQLError(t)
         
+    @staticmethod
+    def delete(table:Tables, filters:dict):
+        conn = sqlite3.connect(table.path)
+        conn.row_factory = sqlite3.Row
+
+        statement = f"""DELETE FROM {table.name}"""
+        if filters: 
+            conditions = []
+            if filters.get("specialised_filters"): #specialised_filters is a list in filters, in which QueryConditions is passed
+                conditions = conditions + filters.get("specialised_filters") # ["age > 1", "name = Jayden", etc]
+
+            for column, value in filters.items(): #append the rest, or append normal filters
+                if column != "specialised_filters": conditions.append(QueryConditions.exact(column, value)) #ignore specialised filters. 
+
+            statement += " WHERE " + " AND ".join(conditions)
+
+        conn.execute(statement)
+        conn.commit()
+        conn.close()
+        
 
 def query(table:Tables, operation:Query, **kwargs): 
     """
@@ -257,10 +287,13 @@ def query(table:Tables, operation:Query, **kwargs):
                 return data
 
             elif operation == Query.DELETE: #route to delete operators
-                pass
+                SQLHandler.delete(
+                    table=table,
+                    filters=kwargs
+                )
 
             elif operation == Query.INSERT: 
-                data = SQLHandler.insert(
+                SQLHandler.insert(
                     table=table,
                     values=kwargs.get("values")
                 )

@@ -1,7 +1,5 @@
-import pickle
 import hashlib
 import logging
-import os
 
 from app.auth.exceptions import *
 from app.common.paths import *
@@ -57,8 +55,7 @@ class Handler:
         email, password = self.email, self.password 
         userObject = self.get_user_object()
 
-        if userObject:         
-            #checking if password matches. 
+        if userObject: #checking if password matches. 
             if password == userObject.password:
                 if ON_LOGIN_SYNC_PORTAL:
                     from app.agents.portal.agent import Agent
@@ -98,12 +95,12 @@ class Handler:
 
         if userObject:
             if password == userObject.password: #if password is correct, log them in.
-                logging.info(f"Existing user found. | ID:{userObject.id} E:{userObject.email}")
+                logger.info(f"Existing user found. | ID:{userObject.id} E:{userObject.email}")
                 return userObject #return user credentials
             
             else: #if incorrect password, redirect them to login page. 
                 t = f"An account with this email already exists! Please sign in instead."
-                logging.info(t)
+                logger.info(t)
                 raise FlaskNotification(t) #should be caught in main file.
 
         else: #attempt to create an account. 
@@ -145,5 +142,28 @@ class Handler:
                     }
             )
 
-            logging.info(f"Successful creation of user | ID:{user.id} E:{user.email}")
+            logger.info(f"Successful creation of user | ID:{user.id} E:{user.email}")
             return user
+        
+    def delete_account(self):
+        userObject = self.get_user_object()
+
+        if userObject:
+            query(
+                table=Tables.USERDATA_DATABASE, 
+                operation=Query.DELETE,
+                email = userObject.email, 
+                id = userObject.id
+            )
+
+            query(
+                table=Tables.USERS, 
+                operation=Query.DELETE,
+                email = userObject.email
+            )
+
+            logger.info(f"Successful deletion of user | ID:{userObject.email}")
+
+        else:
+            t = f"Failed to delete User: Does not exist. No error raised. | E: {self.email}"
+            logger.critical(t)

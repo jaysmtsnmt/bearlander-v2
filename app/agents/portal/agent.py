@@ -19,7 +19,7 @@ from app.agents.portal.exceptions import *
 
 logging.basicConfig(
     handlers = [
-        logging.FileHandler(f"PATH_LOGTXT"),
+        logging.FileHandler(f"{PATH_LOGTXT}"),
         logging.StreamHandler()
     ],
     level = logging.INFO, #determine which level of logs to display - at info, debug isn't displayed, but everything else is.
